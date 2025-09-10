@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Movies</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Login Page -->
+    <div class="container" id="loginPage">
+      <div class="card">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Enter Email" required />
+        <br />
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter Password"
+          required
+        />
+        <br />
+        <button onclick="login()">Login</button>
+        <br />
+        <p id="errorMsg" style="color: red"></p>
+      </div>
+    </div>
+
+    <!-- Movie Page -->
+    <div id="moviePage" style="display: none">
+      <div class="movie-header">
+        <h1>Movie Search</h1>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+      <div style="text-align: center; margin-bottom: 20px">
+        <input type="text" id="searchInput" placeholder="Enter movie name" />
+        <button onclick="searchMovies()">🔍 Search</button>
+      </div>
+
+      <ul id="movieList">
+        <center>
+          <i> All Movies are Displayed Here... </i>
+        </center>
+      </ul>
+    </div>
+
+    <!-- Hidden reusable detail card -->
+    <template id="movieCardTemplate">
+      <li class="movie-detail-card" style="grid-column: 1 / -1">
+        <!-- Poster on the left -->
+        <div class="poster-container">
+          <img src="" alt="Poster" />
+        </div>
+
+        <!-- Details area on the right -->
+        <div class="details">
+          <h2 class="movie-title"></h2>
+          <p class="movie-overview"></p>
+
+          <!-- Extra details -->
+          <p><b>Release Date:</b> <span class="release-date"></span></p>
+          <p><b>Languages:</b> <span class="languages"></span></p>
+          <p><b>Director:</b> <span class="director"></span></p>
+          <p><b>Actors:</b> <span class="actors"></span></p>
+          <p><b>Genre:</b> <span class="genre"></span></p>
+          <p class="rating">⭐ <span class="imdb-rating"></span> / 10</p>
+
+          <!-- 🎬 Trailer Section -->
+          <div class="trailer-container">
+            <h3>🎬 Trailer:</h3>
+            <label for="languageSelect">Select Language:</label>
+            <select class="languageSelect"></select>
+            <button class="openTrailer">▶ Watch Trailer</button>
+
+            <div class="video-section trailerSection" style="display: none">
+              <iframe
+                class="trailerFrame"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+              <button class="close-btn closeTrailer">✖ Close Trailer</button>
+            </div>
+          </div>
+
+          <!-- 🎵 Songs Section -->
+          <div class="songs-container">
+            <h3>🎵 Songs:</h3>
+            <ul class="songsList"></ul>
+
+            <div class="video-section songSection" style="display: none">
+              <iframe
+                class="songFrame"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+              <button class="close-btn closeSong">✖ Close Song</button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </template>
+
+    <!-- Include JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -29,7 +29,7 @@
 
 ## 🚀 Demo
 
-🔗 **Live Preview:** \[Add your GitHub Pages link here]
+🔗 **Live Preview:** \[https://harish07466.github.io/MovieApp-/]
 
 📸 **Screenshots:**
 

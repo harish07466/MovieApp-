@@ -29,17 +29,43 @@
     <!-- Movie Page -->
     <div id="moviePage" style="display: none">
       <div class="movie-header">
-        <h1>Movie Search</h1>
+        <h1
+          style="
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 40px;
+            font-style: italic;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 2px;
+          "
+        >
+          🎬
+          <span
+            style="
+              background: linear-gradient(90deg, #00f7ff, #a07dff, #ff7dff);
+              -webkit-background-clip: text;
+            "
+          >
+            Movie Search
+          </span>
+          📽️
+        </h1>
         <button class="logout-btn" onclick="logout()">Logout</button>
       </div>
+
       <div style="text-align: center; margin-bottom: 20px">
         <input type="text" id="searchInput" placeholder="Enter movie name" />
         <button onclick="searchMovies()">🔍 Search</button>
+        <button class="back">🔙Back</button>
       </div>
 
       <ul id="movieList">
         <center>
-          <i> All Movies are Displayed Here... </i>
+          <strong>
+            <i style="justify-content: center; color: rgb(30, 198, 210)">
+              All Movies are Displayed Here...
+            </i>
+          </strong>
         </center>
       </ul>
     </div>
@@ -97,6 +123,8 @@
             </div>
           </div>
         </div>
+
+        <button class="backbtn">🔙Back to Search</button>
       </li>
     </template>
 

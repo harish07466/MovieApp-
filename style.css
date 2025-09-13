@@ -8,7 +8,7 @@
 
 /* Background (Static, No Animation) */
 body {
-  background: url("LoginPageBG.png") no-repeat center center fixed;
+  background: url("assets/LoginPageBG.png") no-repeat center center fixed;
   background-size: cover;
   color: #fff;
   min-height: 100vh;

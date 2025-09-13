@@ -33,9 +33,9 @@
 
 📸 **Screenshots:**
 
-| Login Page                 | Movie Grid               | Movie Detail Page            |
-| -------------------------- | ------------------------ | ---------------------------- |
-| ![Login](assets/login.png) | ![Grid](assets/grid.png) | ![Detail](assets/detail.png) |
+| Login Page            | Movie Grid           | Movie Detail Page            |
+| --------------------- | -------------------- | ---------------------------- |
+| assets/Login-Page.png | assets/MovieGrid.png | assets/MovieDetailedPage.png |
 
 _(Replace `assets/_.png` with your actual screenshot paths)\*
 

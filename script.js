@@ -10,7 +10,6 @@ async function login() {
   try {
     const res = await fetch("users.json");
     const users = await res.json();
-
     const user = users.find(
       (u) => u.email === email && u.password === password
     );
@@ -41,6 +40,7 @@ function logout() {
 async function searchMovies() {
   const searchTerm = document.getElementById("searchInput").value.trim();
   const movieList = document.getElementById("movieList");
+
   movieList.innerHTML = `<li class="loading-text"><i>Loading...</i></li>`;
 
   if (!searchTerm) {
@@ -63,7 +63,6 @@ async function searchMovies() {
       data.Search.forEach((movie) => {
         const li = document.createElement("li");
         li.classList.add("movie-card");
-
         const posterUrl =
           movie.Poster !== "N/A"
             ? movie.Poster
@@ -119,6 +118,7 @@ async function fetchYouTubeVideo(query, index = 0) {
         return `https://www.youtube.com/embed/${embeddableVideos[0].id}`;
       }
     }
+
     return null;
   } catch (err) {
     console.error("Error fetching YouTube video:", err);
@@ -129,7 +129,10 @@ async function fetchYouTubeVideo(query, index = 0) {
 // ================= SHOW MOVIE DETAILS =================
 async function showMovieDetails(imdbID) {
   const movieList = document.getElementById("movieList");
-  movieList.innerHTML = "Loading details...";
+  movieList.innerHTML = `
+    <span style="color:#FF5733; font-size:18px; font-weight:bold; font-style:italic; text-align:center; display:block;">
+      Loading details...
+    </span>`;
 
   const apiUrl = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${imdbID}&plot=full`;
 
@@ -143,7 +146,6 @@ async function showMovieDetails(imdbID) {
       movie.Poster !== "N/A"
         ? movie.Poster
         : "https://dummyimage.com/250x375/1e2a38/ffffff&text=No+Poster";
-
     const languages = movie.Language
       ? movie.Language.split(",").map((l) => l.trim())
       : ["English"];
@@ -222,6 +224,7 @@ async function showMovieDetails(imdbID) {
     const closeSongBtn = card.querySelector(".closeSong");
 
     const sampleSongs = ["Song 1", "Song 2", "Song 3"];
+
     if (songsList) {
       sampleSongs.forEach((song, idx) => {
         const li = document.createElement("li");
@@ -247,6 +250,34 @@ async function showMovieDetails(imdbID) {
         songSection.style.display = "none";
       });
     }
+
+    document.addEventListener("click", (e) => {
+      if (e.target.classList.contains("backbtn")) {
+        searchMovies();
+      }
+    });
+
+    // ✅ Back button (main back on movie list page)
+    document.addEventListener("click", (e) => {
+      if (e.target.classList.contains("back")) {
+        const movieList = document.getElementById("movieList");
+        const searchInput = document.getElementById("searchInput");
+
+        // Clear search box
+        searchInput.value = "";
+
+        // Reset movie list content
+        movieList.innerHTML = `
+          <strong>
+            <i style="justify-content: center; color: rgb(30, 198, 210)">
+              All Movies are Displayed Here...
+            </i>
+          </strong>`;
+
+        // Smooth scroll back to top
+        movieList.scrollIntoView({ behavior: "smooth" });
+      }
+    });
 
     movieList.appendChild(card);
   } catch (error) {

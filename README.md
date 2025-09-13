@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
-  <b>Discover, explore and enjoy movies like never before!</b><br/>
-  Search movies, view details, watch trailers, and listen to songs – all in one place.
+  <b>Discover, Explore and Enjoy Movies Like Never Before!</b><br/>
+  Search Movies, View Details, Watch Trailers, and Listen to Songs – All In One Place.
 </p>
 
 ---

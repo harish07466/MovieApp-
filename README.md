@@ -29,7 +29,8 @@
 
 ## 🚀 Demo
 
-🔗 **Live Preview:** \[https://harish07466.github.io/MovieApp-/]
+🔗 **Live Preview:** \ https://harish07466.github.io/MovieApp-/
+* Note:- If the Link is Not Working in the Chrome Browser, Copy and paste the Link in Other Browsers like (Microsoft Edge, etc....).
 
 📸 **Screenshots:**
 

@@ -31,6 +31,7 @@
 
 🔗 **Live Preview:-** https://harish07466.github.io/MovieApp-/
 * Note:- If the Link is Not Working in the Chrome Browser, Copy and paste the Link in Other Browsers like (Microsoft Edge, etc....).
+* Important: username and password :- Present in user.json file just copy any one user name & password from the file and give the same for login credentials.
 
 📸 **Screenshots:**
 
@@ -111,4 +112,4 @@ This project is licensed under the **MIT License** – you’re free to use, mod
 
 ---
 
-<p align="center">💻 Developed with ❤️ by <b>Your Name</b></p>
+<p align="center">💻 Developed with ❤️ by <b>Harish Kumbar</b></p>

@@ -8,8 +8,13 @@ async function login() {
   const errorMsg = document.getElementById("errorMsg");
 
   try {
-    const res = await fetch("users.json");
-    const users = await res.json();
+    // 🔹 Hardcoded users instead of fetching users.json
+    const users = [
+      { email: "test@example.com", password: "12345" },
+      { email: "admin@example.com", password: "admin" }
+      // Add more users here
+    ];
+
     const user = users.find(
       (u) => u.email === email && u.password === password
     );
@@ -21,8 +26,8 @@ async function login() {
       errorMsg.textContent = "Invalid email or password";
     }
   } catch (err) {
-    console.error("Error loading users.json:", err);
-    errorMsg.textContent = "Could not load users. Try again later.";
+    console.error("Login error:", err);
+    errorMsg.textContent = "Unexpected error. Try again later.";
   }
 }
 

@@ -3,6 +3,10 @@ const YOUTUBE_API_KEY = "AIzaSyBhBOyN6IpdB_WYmDDhphyVisVH7eljb2s"; // YouTube AP
 
 // ================= LOGIN FUNCTION =================
 async function login() {
+  
+  document.getElementById("loginPage").style.display = "none";
+  document.getElementById("moviePage").style.display = "block";
+  
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
   const errorMsg = document.getElementById("errorMsg");
